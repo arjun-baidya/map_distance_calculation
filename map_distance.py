@@ -3,8 +3,8 @@ from geopy import distance
 
 geocoder = Nominatim(user_agent="arjun")
 
-location1 = "dhanmondi, dhaka"
-location2 = "uttara, dhaka"
+location1 = str(input("from  ",  ))
+location2 = str(input("To"))
 
 print("geocoder", geocoder)
 
