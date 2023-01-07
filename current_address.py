@@ -1,4 +1,8 @@
 import requests
+from geopy.geocoders import Nominatim
+
+
+
 r  = requests.get('https://get.geojs.io/')
 ip_request = requests.get('https://get.geojs.io/v1/ip.json')
 ip_address = ip_request.json()['ip']
@@ -22,3 +26,12 @@ print('country   :', country)
 print('time zone  :', time_zone)
 print('latitude  :', latitude)
 print('longitude  :', longitude)
+
+
+geolocator = Nominatim(user_agent="geoapiExercises")
+location = geolocator.reverse(latitude+","+longitude)
+print("location =======", location)
+
+address = location.raw['address']
+print("address =======", address)
+
